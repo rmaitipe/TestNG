@@ -1,0 +1,8 @@
+<suite name="suite" parallel="classes" thread-count="2">
+    <test name="limiter only suite">
+        <classes>
+            <class name="test.com.ZipLimiterTest" />
+            <class name="test.com.ZipLimiterTestv2" />
+        </classes>
+    </test>
+</suite>

@@ -17,7 +17,7 @@ public class ZipLimiter {
 	private List<ZipCodePair> zipInputMatchList;
 	private String zipA;
 	private String zipB;
-	private static String fileInput ="resources/com/zipInputMergeSortedPairs.txt";//default value given for Test
+	private static String fileInput ="resources/file/zipInputMergeSortedPairs.txt";//default value given for Test
 	private int lineNumber;
 	
 	Logger logger = LoggerFactory.getLogger(ZipLimiter.class);

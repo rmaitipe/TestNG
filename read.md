@@ -7,10 +7,12 @@ ZipLimiterTestv3 -uses csv fle for input with a local DateProvider and hardcodes
 ZipLimiterTestv2 -uses separate input text files with a file Reader Class (ZipFileReaderUtil).
 ZipLimiterTest   -uses setup in the test class itself
 
+XML file suite definition adds ability to trigger automatically.
 
 References used in this project 
 https://www.baeldung.com/junit-vs-testng
 https://stackoverflow.com/questions/30624727/what-is-the-fastest-way-to-get-dimensions-of-a-csv-file-in-java
+https://www.baeldung.com/testng
 
 Annotations used in this project @BeforeMethod, @Test, @AfterMethod, @BeforeClass, @AfterClass, @DataProvider
 TestNG can Run test suite via xml (Not covered)
