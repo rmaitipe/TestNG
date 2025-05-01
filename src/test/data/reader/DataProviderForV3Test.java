@@ -1,4 +1,4 @@
-package csv.reader;
+package test.data.reader;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,12 +10,9 @@ import org.testng.annotations.Test;
 
 import com.opencsv.CSVReader;
 
-import test.dro.ZipPairDRO;
-
 public class DataProviderForV3Test{
 
-	
-	/*The purpose of these package is to understand how data is setup for DataProvider Class
+	/* The purpose of these package is to understand how data is setup for DataProvider Class
 	 * test method declares that its data should be supplied by the DataProvider named "getdata"
 	 * Here the data is converted to an object and passed
 	 */ 
@@ -36,18 +33,18 @@ public class DataProviderForV3Test{
 	{
 		//Rows - Number of test cases.
 		//Columns - Number of parameters in test data.
-		ZipPairDRO[] list=new ZipPairDRO[1];
+		ZipPairDRO[] array=new ZipPairDRO[1];
 		try(CSVReader csvReader = new CSVReader(new FileReader("resources/test/v3/completev3.csv"), ',')) {
 			String[] csvData =null;
 			while ((csvData =csvReader.readNext()) !=null) {
 		    	for (int i=0;i<1;i++) {
-		    		list[i] =new ZipPairDRO(csvData[0],csvData[1],csvData[2],csvData[3]);
+					array[i] =new ZipPairDRO(csvData[0],csvData[1],csvData[2],csvData[3]);
 		    	}
 		    } 
 		} catch (Exception ex) {
-	        ex.printStackTrace();
+	        logger.debug(ex.getMessage());
 	    }
-	return list;
+	return array;
 	}
     
 }

@@ -1,16 +1,12 @@
-package csv.reader;
+package test.data.reader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-import test.dataprovider.DataProvider1;
-import test.dro.ZipPairDRO;
-
 public class DataProviderForV4Test{
 
-	
-	/*The purpose of these package is to understand how data is setup for DataProvider Class
+	/* The purpose of these package is to understand how data is setup for DataProvider Class
 	 * test method declares that its data should be supplied by the DataProvider named "getdata"
 	 * Here the data is converted to an object and passed
 	 */ 

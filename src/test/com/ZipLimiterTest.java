@@ -1,4 +1,4 @@
-package test;
+package test.com;
 
 import java.util.ArrayList;
 import java.util.List;

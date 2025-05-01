@@ -1,4 +1,4 @@
-package test;
+package test.com;
 
 import java.util.List;
 import org.slf4j.Logger;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import com.ZipCodePair;
 import com.ZipLimiter;
-
+import test.data.reader.ZipFileReaderUtil;
 
 /*
 This v2 class is to Unit test the ZipLimiter class. 
@@ -45,7 +45,6 @@ public class ZipLimiterTestv2 {
     /*
     * Runs test cases for different scenarios comparing size of the lists and content of the lists
     * Test cases: No Merge, Sorted Merge, UnSorted Merge, Merge With BadData
-    *
     */
     @Test
 	public void zipLimiterDataTest() {
@@ -66,7 +65,6 @@ public class ZipLimiterTestv2 {
 		List<ZipCodePair> test4 = zip.test("resources/test/zipInputBadDataPairs.txt");
 		Assert.assertEquals(expectedtest4.size(), test4.size());
 		Assert.assertEquals(expectedtest4, test4);
-		
 	}
     
 }

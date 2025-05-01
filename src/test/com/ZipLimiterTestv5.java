@@ -1,4 +1,4 @@
-package test;
+package test.com;
 
 import java.util.List;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import com.ZipCodePair;
 import com.ZipLimiter;
 
-import test.dataprovider.DataProvider2;
+import test.data.reader.DataProvider2;
 
 /*
 This v3 class is to Unit test the ZipLimiter class. 

@@ -1,4 +1,4 @@
-package csv.reader;
+package test.data.reader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class DataProviderBasicTest{
 
-	/*The purpose of these package is to understand how data is setup for DataProvider Class
+	/* The purpose of these package is to understand how data is setup for DataProvider Class
 	 * test method declares that its data should be supplied by the DataProvider named "getdata"
 	 * Number of columns should match the number of input parameters
 	 */ 

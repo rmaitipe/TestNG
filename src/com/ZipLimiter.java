@@ -6,7 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import test.ZipFileReaderUtil;
+import test.data.reader.ZipFileReaderUtil;
 /*
 	This class uses the zipInputPair.txt as a source to read a zip code range and then compresses the range where values overlap 
 	Values in the file are assumed to be in comma separated pairs
@@ -17,7 +17,7 @@ public class ZipLimiter {
 	private List<ZipCodePair> zipInputMatchList;
 	private String zipA;
 	private String zipB;
-	private static String fileInput ="resources/test/zipInputMergeSortedPairs.txt";//default value given for Test
+	private static String fileInput ="resources/com/zipInputMergeSortedPairs.txt";//default value given for Test
 	private int lineNumber;
 	
 	Logger logger = LoggerFactory.getLogger(ZipLimiter.class);

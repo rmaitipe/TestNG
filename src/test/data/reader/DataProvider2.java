@@ -1,10 +1,12 @@
-package test.dataprovider;
+package test.data.reader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 
 import com.opencsv.CSVReader;
@@ -13,39 +15,38 @@ import com.univocity.parsers.common.processor.AbstractRowProcessor;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 
-import test.dro.ZipPairDRO;
+public class DataProvider2 {
 
-
-public class DataProvider1 {
+	Logger logger = LoggerFactory.getLogger(DataProvider2.class);
 
 	@DataProvider (name="getData")
-	public ZipPairDRO[] getData() throws IOException
-	{
+	public Object[][]  getData() throws IOException	{
 		//Rows - Number of test cases.
 		//Columns - Number of parameters in test data.
-		ZipPairDRO[] list = null;
+		Object[][] array2D = null;
 		try(CSVReader csvReader = new CSVReader(new FileReader("resources/test/v3/completev3.csv"), ',')){
 		
 			//Adding parser to get file dimensions - improve if possible later.
 			CsvDimension myDimensionProcessor  = parserLogic();
 			int rowCount = (int) myDimensionProcessor.rowCount-1;//skip Column Info row- Custom
-			
-			list=new ZipPairDRO[rowCount];	
+			int columnCount = (int) myDimensionProcessor.lastColumn;
+			array2D=new Object[rowCount][columnCount];
 			int i=0;
 			csvReader.readNext();//skip Column Info row- Custom
 			String[] csvData = null;
 			
 			while ((csvData =csvReader.readNext()) != null) {
-				list[i] = new ZipPairDRO(csvData[0],csvData[1],csvData[2],csvData[3]);
+				for(int j=0; j<csvData.length;j++) {
+					array2D[i][j] =csvData[j];
+				}
 				i++;
 		    }
 		} catch (Exception ex) {
-	        ex.printStackTrace();
+			logger.debug(ex.getMessage());
 	    }
-	return list;
+		return array2D;
 	}
 
-	 //https://stackoverflow.com/questions/30624727/what-is-the-fastest-way-to-get-dimensions-of-a-csv-file-in-java
 	 public CsvDimension parserLogic() throws FileNotFoundException{
 		 
 	    //Creates an implementation of AbstractRowProcessor, defined below.

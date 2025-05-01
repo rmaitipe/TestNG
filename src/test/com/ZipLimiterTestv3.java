@@ -1,4 +1,4 @@
-package test;
+package test.com;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import com.ZipCodePair;
 import com.ZipLimiter;
 import com.opencsv.CSVReader;
 
-import test.dro.ZipPairDRO;
+import test.data.reader.ZipPairDRO;
 
 /*
 This v3 class is to Unit test the ZipLimiter class. 
@@ -38,8 +38,7 @@ public class ZipLimiterTestv3 {
     }
     
 	@DataProvider
-	public ZipPairDRO[] getDataZip() throws IOException
-	{
+	public ZipPairDRO[] getDataZip() throws IOException	{
 		//Rows - Number of times your test has to be repeated.
 		//Columns - Number of parameters in test data.
 		ZipPairDRO[] list=new ZipPairDRO[1];

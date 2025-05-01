@@ -1,4 +1,4 @@
-package test.dro;
+package test.data.reader;
 
 public class ZipPairDRO {
 
